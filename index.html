@@ -7,60 +7,32 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Prism CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
-    <style>
-        /* Custom styles */
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-
-        .copy-button {
-            position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
-            padding: 0.25rem 0.5rem;
-            background: #2d3748;
-            color: white;
-            border-radius: 0.25rem;
-            font-size: 0.875rem;
-            opacity: 0;
-            transition: opacity 0.2s;
-        }
-
-        pre:hover .copy-button {
-            opacity: 1;
-        }
-
-        .copy-button.copied {
-            background: #48bb78;
-        }
-
-        pre[class*="language-"] {
-            position: relative;
-            margin: 1em 0;
-            border-radius: 0.5rem;
-        }
-    </style>
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-coy.min.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-50 min-h-screen">
-    <header class="bg-gray-800 text-white py-12">
+<body class="min-h-screen">
+    <header class="bg-white text-gray-800 py-12">
         <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold flex items-center gap-2">
-                <span>💾</span>
+			<div id="db-container">
+				<img src="database.png" alt="">
+			</div>
+            <h1 class="text-4xl font-bold gap-2" style="text-align: center;">
+                
                 BDA cheat sheet
             </h1>
-			<a href="https://youtu.be/xvFZjo5PgG0">LavdalYahya@gmail.com</a>
+			<p id="email-link"><a href="https://youtu.be/xvFZjo5PgG0" >✉️LavdalYahya@gmail.com</a></p>
         </div>
-    </header>
+		<div id="description-container">
+			<p id="description">Ce guide résume les concepts essentiels de "Gestion des utilisateurs" et "PL/SQL" pour vous aider à résoudre les exercices du TP Révision BD.</p>
+		</div>
+	</header>
 
     <main class="container mx-auto px-4 py-8">
-        <div class="bg-red-100 border-l-4 border-red-500 p-4 mb-8">
+        
+			<div id="warning-text">
             <p class="font-bold">⚠️ ATTENTION</p>
             <p>TOUT LES CODE DANS CE DOCUMENT SONT GENERER PAR CHATGPT</p>
+		
         </div>
 
         <!-- Tab Navigation -->
@@ -109,104 +81,37 @@
 		  >
 			<li>
 			  <strong>Créer un utilisateur</strong>
-			  <script
-				src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-				crossorigin="anonymous"
-				referrerpolicy="no-referrer"
-			  ></script>
-			  <link
-				rel="stylesheet"
-				href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-				crossorigin="anonymous"
-				referrerpolicy="no-referrer"
-			  />
+			  
 			  <pre
-				id="19963b52-fd00-8064-b17d-f5cc122b7255"
-				class="relative bg-gray-800 rounded-lg p-4 text-white"
-			  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE USER admin1 IDENTIFIED BY 12345;</code></pre>
+			  ><code class="language-SQL">CREATE USER admin1 IDENTIFIED BY 12345;</code></pre>
 			</li>
 			<li>
 			  <strong>Attribuer des privilèges</strong>
-			  <script
-				src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-				crossorigin="anonymous"
-				referrerpolicy="no-referrer"
-			  ></script>
-			  <link
-				rel="stylesheet"
-				href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-				crossorigin="anonymous"
-				referrerpolicy="no-referrer"
-			  />
+			  
 			  <pre
-				id="19963b52-fd00-800c-b8ad-eb1a6a26ec3b"
-				class="relative bg-gray-800 rounded-lg p-4 text-white"
-			  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">GRANT CREATE TABLE, ALTER ON Client TO admin1;
+			  ><code class="language-SQL">GRANT CREATE TABLE, ALTER ON Client TO admin1;
   GRANT SELECT ON Hotel TO admin1;</code></pre>
 			</li>
 			<li>
 			  <strong>Supprimer des privilèges</strong>
-			  <script
-				src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-				crossorigin="anonymous"
-				referrerpolicy="no-referrer"
-			  ></script>
-			  <link
-				rel="stylesheet"
-				href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-				crossorigin="anonymous"
-				referrerpolicy="no-referrer"
-			  />
+			  
 			  <pre
 				id="19963b52-fd00-8015-8f31-c5242af5f9f7"
-				class="relative bg-gray-800 rounded-lg p-4 text-white"
-			  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">REVOKE ALL PRIVILEGES FROM admin1;</code></pre>
+			  ><code class="language-SQL">REVOKE ALL PRIVILEGES FROM admin1;</code></pre>
 			</li>
 			<li>
 			  <strong>Créer un tablespace</strong>
-			  <script
-				src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-				crossorigin="anonymous"
-				referrerpolicy="no-referrer"
-			  ></script>
-			  <link
-				rel="stylesheet"
-				href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-				crossorigin="anonymous"
-				referrerpolicy="no-referrer"
-			  />
+
 			  <pre
 				id="19963b52-fd00-8070-a6a8-cc0a1ffdc19f"
-				class="relative bg-gray-800 rounded-lg p-4 text-white"
-			  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE TABLESPACE tab_hotel DATAFILE 'tab_hotel.dbf' SIZE 4M;</code></pre>
+			  ><code class="language-SQL">CREATE TABLESPACE tab_hotel DATAFILE 'tab_hotel.dbf' SIZE 4M;</code></pre>
 			</li>
 			<li>
 			  <strong>Créer un profil avec des restrictions</strong>
-			  <script
-				src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-				crossorigin="anonymous"
-				referrerpolicy="no-referrer"
-			  ></script>
-			  <link
-				rel="stylesheet"
-				href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-				crossorigin="anonymous"
-				referrerpolicy="no-referrer"
-			  />
+			  
 			  <pre
 				id="19963b52-fd00-80f6-8737-c5f3b651d74c"
-				class="relative bg-gray-800 rounded-lg p-4 text-white"
-			  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE PROFILE profig1 LIMIT
+			  ><code class="language-SQL">CREATE PROFILE profig1 LIMIT
   FAILED_LOGIN_ATTEMPTS 2
   PASSWORD_LIFE_TIME 60
   SESSIONS_PER_USER 2
@@ -214,23 +119,10 @@
 			</li>
 			<li>
 			  <strong>Appliquer un profil à un utilisateur</strong>
-			  <script
-				src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-				integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-				crossorigin="anonymous"
-				referrerpolicy="no-referrer"
-			  ></script>
-			  <link
-				rel="stylesheet"
-				href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-				integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-				crossorigin="anonymous"
-				referrerpolicy="no-referrer"
-			  />
+			  
 			  <pre
 				id="19963b52-fd00-80c8-a51f-f8a8e744b47d"
-				class="relative bg-gray-800 rounded-lg p-4 text-white"
-			  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">ALTER USER user1 PROFILE profig1;</code></pre>
+			  ><code class="language-SQL">ALTER USER user1 PROFILE profig1;</code></pre>
 			</li>
 		  </ol>
         </div>
@@ -247,24 +139,11 @@
 			  <ul id="19963b52-fd00-8039-b2d7-ce3a7e7ccd35" class="space-y-2 list-disc pl-5">
 				<br><li style="list-style-type: disc">
 				  <strong>Blocs PL/SQL</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-80d5-bf1e-d6d67bee2bfa"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">DECLARE
+				  ><code class="language-SQL">DECLARE
 		v_nom VARCHAR2(50);
 	  BEGIN
 		v_nom := &#x27;John&#x27;;
@@ -275,24 +154,11 @@
 			  <ul id="19963b52-fd00-8015-b32e-e20b6b7cd283" class="space-y-2 list-disc pl-5">
 				<br><li style="list-style-type: disc">
 				  <strong>Boucles et conditions</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-8036-b384-d8b0f9bbfd4b"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">DECLARE
+				  ><code class="language-SQL">DECLARE
 		i NUMBER := 1;
 	  BEGIN
 		WHILE i &lt;= 10 LOOP
@@ -305,24 +171,11 @@
 			  <ul id="19963b52-fd00-80d6-a78e-ffd8860abcce" class="space-y-2 list-disc pl-5">
 				<br><li style="list-style-type: disc">
 				  <strong>Procédures</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-805d-83f6-f6e44b814aba"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE PROCEDURE Insert_Client(p_nom VARCHAR2, p_prenom VARCHAR2) AS
+				  ><code class="language-SQL">CREATE PROCEDURE Insert_Client(p_nom VARCHAR2, p_prenom VARCHAR2) AS
 	  BEGIN
 		INSERT INTO Client (nom, prenom) VALUES (p_nom, p_prenom);
 	  END;</code></pre>
@@ -331,24 +184,11 @@
 			  <ul id="19963b52-fd00-80b8-b3ab-c4392af6af5b" class="space-y-2 list-disc pl-5">
 				<br><li style="list-style-type: disc">
 				  <strong>Fonctions</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-80f4-8dc2-ef702ab15966"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE FUNCTION Total_Paiements(p_idClient NUMBER) RETURN NUMBER AS
+				  ><code class="language-SQL">CREATE FUNCTION Total_Paiements(p_idClient NUMBER) RETURN NUMBER AS
 		total NUMBER;
 	  BEGIN
 		SELECT SUM(montant) INTO total FROM Paiement WHERE idClient = p_idClient;
@@ -359,24 +199,11 @@
 			  <ul id="19963b52-fd00-80fb-8b17-e1c2a3d86009" class="space-y-2 list-disc pl-5">
 				<br><li style="list-style-type: disc">
 				  <strong>Curseurs (requêtes dynamiques)</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-808d-91e1-cf13922cd9ec"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">DECLARE
+				  ><code class="language-SQL">DECLARE
 		CURSOR c_clients IS SELECT nom FROM Client;
 		v_nom Client.nom%TYPE;
 	  BEGIN
@@ -411,24 +238,11 @@
 			  <br>
 				<li>
 				  <strong>Empêcher les mises à jour le week-End</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-8027-8417-ea95e828c90f"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE OR REPLACE TRIGGER Check_Weekend
+				  ><code class="language-SQL">CREATE OR REPLACE TRIGGER Check_Weekend
 	  BEFORE UPDATE ON Reservation
 	  FOR EACH ROW
 	  BEGIN
@@ -447,24 +261,11 @@
 				<br>
 				<li>
 				  <strong>Mettre à jour le compteur de réservations par hôtel</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-80f0-b7d5-ed6d9fb1eaee"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE OR REPLACE TRIGGER Update_Compteur
+				  ><code class="language-SQL">CREATE OR REPLACE TRIGGER Update_Compteur
 	  AFTER INSERT ON Reservation
 	  FOR EACH ROW
 	  BEGIN
@@ -483,24 +284,11 @@
 				<br>
 				<li>
 				  <strong>Sauvegarder les modifications sur la table Client</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-80a3-bb10-c4f6de69274f"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE OR REPLACE TRIGGER Backup_Client
+				  ><code class="language-SQL">CREATE OR REPLACE TRIGGER Backup_Client
 	  AFTER UPDATE OR DELETE ON Client
 	  FOR EACH ROW
 	  BEGIN
@@ -527,47 +315,21 @@
 				<br>
 				<li>
 				  <strong>Créer un utilisateur admin1</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-8068-8cb2-d5a7c412c454"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE USER admin1 IDENTIFIED BY 12345;
+				  ><code class="language-SQL">CREATE USER admin1 IDENTIFIED BY 12345;
 	  GRANT CONNECT TO admin1;</code></pre>
 				
 				<br>
 				<li>
 				  <strong>Attribuer les droits à admin1</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-8023-bda2-d981a6803f3d"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">GRANT CREATE TABLE TO admin1;
+				  ><code class="language-SQL">GRANT CREATE TABLE TO admin1;
 	  GRANT ALTER (nom, prenom) ON Client TO admin1;
 	  GRANT SELECT ON Hotel TO admin1;</code></pre>
 				</li>
@@ -575,139 +337,61 @@
 				<br>
 				<li>
 				  <strong>Afficher les privilèges</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-80b8-8974-da977f20c13c"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">SELECT * FROM USER_TAB_PRIVS WHERE GRANTEE = &#x27;ADMIN1&#x27;;</code></pre>
+				  ><code class="language-SQL">SELECT * FROM USER_TAB_PRIVS WHERE GRANTEE = &#x27;ADMIN1&#x27;;</code></pre>
 				</li>
 			  
 				<br>
 				<li>
 				  <strong>Retirer les droits d’admin1</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-8071-8188-f4b3022df115"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">REVOKE ALL PRIVILEGES FROM admin1;</code></pre>
+				  ><code class="language-SQL">REVOKE ALL PRIVILEGES FROM admin1;</code></pre>
 				</li>
 			 
 				<br>
 				<li>
 				  <strong>Afficher les utilisateurs existants</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-80ca-a478-e74eb3e54cb4"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">SELECT * FROM DBA_USERS;</code></pre>
+				  ><code class="language-SQL">SELECT * FROM DBA_USERS;</code></pre>
 				</li>
 			 
 				<br>
 				<li>
 				  <strong>Supprimer admin1</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-8063-937a-c78b837d8010"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">DROP USER admin1 CASCADE;</code></pre>
+				  ><code class="language-SQL">DROP USER admin1 CASCADE;</code></pre>
 				</li>
 			
 				<br>
 				<li>
 				  <strong>Créer user1 avec changement de mot de passe forcé</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-8039-a625-f982d27ebf80"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE USER user1 IDENTIFIED BY 12345 PASSWORD EXPIRE;</code></pre>
+				  ><code class="language-SQL">CREATE USER user1 IDENTIFIED BY 12345 PASSWORD EXPIRE;</code></pre>
 				</li>
 			 
 				<br>
 				<li>
 				  <strong>Créer un tablespace et l&#x27;affecter à user1</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-80d3-a3ef-d60d89d0a000"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE TABLESPACE tab_hotel DATAFILE &#x27;tab_hotel.dbf&#x27; SIZE 4M;
+				  ><code class="language-SQL">CREATE TABLESPACE tab_hotel DATAFILE &#x27;tab_hotel.dbf&#x27; SIZE 4M;
 	  ALTER USER user1 DEFAULT TABLESPACE tab_hotel QUOTA 1M ON tab_hotel;</code></pre>
 				</li>
 			  </ol>
@@ -723,24 +407,11 @@
 				<br>
 				<li>
 				  <strong>Insérer un client en PL/SQL</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-8054-a236-c931b3d46e01"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">BEGIN
+				  ><code class="language-SQL">BEGIN
 		INSERT INTO Client (nom, prenom) VALUES (&#x27;Dupont&#x27;, &#x27;Jean&#x27;);
 	  END;</code></pre>
 				</li>
@@ -748,24 +419,11 @@
 				<br>
 				<li>
 				  <strong>Créer une procédure pour insérer des chambres</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-809e-abd9-d19849af6eba"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE PROCEDURE Insert_Chambres IS
+				  ><code class="language-SQL">CREATE PROCEDURE Insert_Chambres IS
 	  BEGIN
 		FOR i IN 1..30 LOOP
 		  INSERT INTO Chambre (idChambre, type, tarif, idHotel, libre) VALUES (i, &#x27;Standard&#x27;, 50, 1, &#x27;OUI&#x27;);
@@ -776,24 +434,11 @@
 				<br>
 				<li>
 				  <strong>Afficher le total des paiements d’un client</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-80fc-bf5e-d7039f0fad73"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE FUNCTION TotalPaiements(idClient NUMBER) RETURN NUMBER AS
+				  ><code class="language-SQL">CREATE FUNCTION TotalPaiements(idClient NUMBER) RETURN NUMBER AS
 	  total NUMBER;
 	  BEGIN
 		SELECT SUM(montant) INTO total FROM Paiement WHERE idClient = idClient;
@@ -804,24 +449,11 @@
 				<br>
 				<li>
 				  <strong>Trigger pour empêcher les mises à jour le week-end</strong>
-				  <script
-					src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-					integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  ></script>
-				  <br>
-				  <link
-					rel="stylesheet"
-					href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
-					integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-					crossorigin="anonymous"
-					referrerpolicy="no-referrer"
-				  />
+				 
 				  <pre
 					id="19963b52-fd00-8019-8618-fa8684826d96"
 					class="relative bg-gray-800 rounded-lg p-4 text-white"
-				  ><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE OR REPLACE TRIGGER Bloque_Maj_Weekend
+				  ><code class="language-SQL">CREATE OR REPLACE TRIGGER Bloque_Maj_Weekend
 	  BEFORE UPDATE ON Reservation
 	  FOR EACH ROW
 	  BEGIN
@@ -839,6 +471,7 @@
     <!-- Prism JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+	<script src="prism.js"></script>
     
     <script>
         // Tab switching
